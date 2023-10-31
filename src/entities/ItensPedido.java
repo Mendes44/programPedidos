@@ -9,7 +9,7 @@ public class ItensPedido {
 	public ItensPedido() {
 		
 	}
-	
+		
 	public ItensPedido(Integer quant, double precoPedido, Produtos produto) {
 		this.quant = quant;
 		this.precoPedido = precoPedido;
@@ -40,8 +40,15 @@ public class ItensPedido {
 		this.produto = produto;
 	}
 
-	//FUNÇÃO PARA CALCULAR O SUBTOTAL DO PRODUTO
 	public double subTotal() {
 		return quant * precoPedido;
 	}
+	@Override
+	public String toString() {
+		return getProduto().getNomeProduto() 
+				+ ", R$"
+				+ String.format("%.2f", precoPedido)
+				+ " - " + quant
+				+" - Subtotal: R$"
+				+ String.format("%.2f", subTotal());}
 }
