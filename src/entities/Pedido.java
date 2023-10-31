@@ -8,6 +8,7 @@ import java.util.List;
 public class Pedido {
 
 	private static SimpleDateFormat sdf = new SimpleDateFormat ("dd/MM/yyyy");
+	
 	private Date momento;
 	private StatusPedido status;
 	private Clientes cliente;
@@ -17,12 +18,11 @@ public class Pedido {
 		
 	}
 
-	public Pedido(Date momento, StatusPedido status, Clientes cliente, List<ItensPedido> itens) {
+	public Pedido(Date momento, StatusPedido status, Clientes cliente) {
 		super();
 		this.momento = momento;
 		this.status = status;
 		this.cliente = cliente;
-		this.itens = itens;
 	}
 
 	public static SimpleDateFormat getSdf() {
@@ -79,9 +79,9 @@ public class Pedido {
 			
 		sb.append("MOMENTO DO PEDIDO: ");
 		sb.append(sdf.format(momento)+"\n");
-		sb.append("Order Status: ");
+		sb.append("Status do Pedido: ");
 		sb.append(status + "\n");
-		sb.append("Client: ");
+		sb.append("Cliente: ");
 		sb.append(cliente + "\n");
 		for (ItensPedido item : itens) {
 			sb.append(item + "\n");

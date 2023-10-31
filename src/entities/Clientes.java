@@ -1,9 +1,11 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Clientes {
 
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	private String nome;
 	private String email;
 	private Date dataNiver;
@@ -44,7 +46,7 @@ public class Clientes {
 
 	@Override
 	public String toString() {
-		return "Clientes [nome=" + nome + ", email=" + email + ", dataNiver=" + dataNiver + "]";
+		return nome + " -- Email: " + email + " -- Data Nascimento: " + sdf.format(dataNiver);
 	}
 	
 	
